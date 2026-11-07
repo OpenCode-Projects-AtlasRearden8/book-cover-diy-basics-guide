@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 3 — Spine Math for Print — Book Cover DIY Basics Guide</title>
+<meta name="description" content="Beginner manual for designing clean, KDP-ready book covers yourself with free tools. By Asdale Dynamics, LLC.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="home" href="index.html">Book Cover DIY Basics Guide</a>
+  <span class="byline">by Asdale Dynamics, LLC</span>
+</header>
+<main>
+<h1>Lesson 3 — Spine Math for Print</h1>
+<p>The spine is the one part of the cover where being wrong is visible
+from across a room: a spine too narrow for your letters, or front/back
+art that got baked into the spine area because you guessed the width.
+Here is the actual math, and it is friendlier than it sounds.</p>
+<h2>The spine formula (with honest caveats)</h2>
+<p>Spine width = <strong>pages x multiplier</strong>, where the multiplier depends on
+your paper stock. The multipliers below are the widely-cited KDP
+industry approximations for common stocks:</p>
+<table>
+<thead>
+<tr>
+<th>Paper stock</th>
+<th>Multiplier (inches per page)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black &amp; white interior on <strong>white paper</strong></td>
+<td>0.002252</td>
+</tr>
+<tr>
+<td>Black &amp; white interior on <strong>cream paper</strong></td>
+<td>0.0025</td>
+</tr>
+<tr>
+<td>Standard <strong>color</strong> interior</td>
+<td>0.002347</td>
+</tr>
+<tr>
+<td><strong>Premium color</strong> interior</td>
+<td>0.002347 (use KDP's template for exact)</td>
+</tr>
+</tbody>
+</table>
+<p>Example: 320-page novel, white paper b&amp;w:</p>
+<pre><code>spine = 320 x 0.002252 = 0.72064&quot;  → build at ~0.72&quot;
+</code></pre>
+<blockquote>
+<p><strong>The friendly warning.</strong> These multipliers are approximations that
+drift slightly with press settings. The <em>always-safe</em> workflow is:
+use the <strong>KDP cover-dimension calculator</strong> (free, on kdp.amazon.com)
+to generate an exact-size template PNG or PSD, then design inside
+that template. This lesson teaches you the math so the calculator's
+numbers never surprise you.</p>
+</blockquote>
+<h2>What changes with the size of the spine</h2>
+<ul>
+<li><strong>Below ~100 pages</strong>: the spine is thin (a 90-page 6x9 on white
+  paper is about 0.20"). <strong>Do not put text on the spine.</strong> It will
+  likely be illegible and may not survive the folding/gluing process
+  cleanly. Keep the spine area artwork-only, matching front and back.</li>
+<li><strong>100+ pages</strong>: spine text is acceptable. Use a font sized so the
+  title reads clearly, vertically centered, with breathing room equal
+  to at least ~0.0625" above and below the text block.</li>
+<li><strong>Horizontal centering</strong>: spine letters should be optically centered
+  (slightly-high of true center feels right; nobody knows why; trust
+  the eye).</li>
+</ul>
+<h2>A worked example you can copy</h2>
+<p>Book: 6" x 9" trim, 288 pages, b&amp;w on cream paper.</p>
+<pre><code>spine  = 288 x 0.0025 = 0.72&quot;
+wrap width  = (6 x 2) + 0.72 + 0.25 = 12.97&quot;
+wrap height = 9 + 0.25              = 9.25&quot;
+front panel starts at: 0.125 (bleed) + 6 + 0.72 = 6.845&quot; from left
+back panel ends at:    0.125 (bleed) + 6        = 6.125&quot;  from left
+spine occupies: 6.125&quot; to 6.845&quot;
+</code></pre>
+<p>Design your wrap at 12.97" x 9.25" @ 300 DPI (3891 x 2775 px) and use
+vertical guides at 6.125" and 6.845" so the spine has its own lane.</p>
+<h2>DPI math (why 300)</h2>
+<p>KDP requires print covers at <strong>300 DPI</strong>. Convert inches to pixels
+simply by multiplying by 300:</p>
+<pre><code>12.97&quot; x 9.25&quot;  →  (12.97 x 300) x (9.25 x 300)  px
+                →  3891 x 2775 px
+</code></pre>
+<p>Same trick for ebook (which is measured in pixels directly — Lesson 2).</p>
+<h2>Three spine mistakes</h2>
+<ol>
+<li><strong>Eyeballing the width.</strong> "Looks about an inch" is how people end
+   up with a 0.72" spine on a 1.06" book. Compute; never guess.</li>
+<li><strong>Backing spine art with way too much contrast</strong> between spine and
+   panels, so any tiny press shift makes the spine look like a sticker.
+   Keep the cover background continuous across the spine when you can.</li>
+<li><strong>Spine text touching the edges of the spine lane.</strong> Give the text
+   block vertical padding inside the spine lane.</li>
+</ol>
+<h2>Cheat sheet: quick spine widths</h2>
+<p>Assuming white paper, b&amp;w interior (0.002252 in/page):</p>
+<table>
+<thead>
+<tr>
+<th>Pages</th>
+<th>Spine width (in)</th>
+<th>Spine text?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90</td>
+<td>0.20</td>
+<td>No</td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.27</td>
+<td>Borderline; lean no</td>
+</tr>
+<tr>
+<td>180</td>
+<td>0.41</td>
+<td>Yes, small type</td>
+</tr>
+<tr>
+<td>240</td>
+<td>0.54</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>320</td>
+<td>0.72</td>
+<td>Yes, comfortable</td>
+</tr>
+<tr>
+<td>448</td>
+<td>1.01</td>
+<td>Yes, plenty of room</td>
+</tr>
+</tbody>
+</table>
+<p>Cream paper (0.0025): same page counts give 0.23 / 0.30 / 0.45 / 0.60 /
+0.80 / 1.12 respectively — cream is always a touch thicker.</p>
+<hr />
+<p><strong>Next:</strong> Lesson 4 — Typography that doesn't fight you.</p>
+</main>
+<nav class="pager">
+  <a class="pager-prev" href="02-trim-sizes-margins-bleed.html">&larr; Lesson 2 — Trim Sizes, Margins, and Bleed</a><a class="pager-next" href="04-typography.html">Lesson 4 — Typography That Doesn't Fight You &rarr;</a>
+</nav>
+<footer>
+  <p>Part of the <a href="index.html">Book Cover DIY Basics Guide</a>.
+  © 2026 Asdale Dynamics, LLC — MIT licensed. Local spot checks only;
+  nothing here publishes anything.</p>
+</footer>
+</body>
+</html>
